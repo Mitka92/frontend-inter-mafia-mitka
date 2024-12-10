@@ -2,13 +2,14 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { selectAuthToken } from "../auth/selectors.js";
 
-export const instance = axios.create({
-  baseURL: "https://back-inter-mafia.onrender.com/api/water",
-});
 // export const instance = axios.create({
-//   baseURL: "http://localhost:8080/api/water",
+//   baseURL: "https://back-inter-mafia-mitka.onrender.com/api/water",
 //   withCredentials: true,
 // });
+export const instance = axios.create({
+  baseURL: "http://localhost:8080/api/water",
+  withCredentials: true,
+});
 
 const setAuthHeaders = (token) => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
